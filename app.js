@@ -104,14 +104,14 @@ const updateSpoticordOuterscope = (song) => {
  **/
 songEmitter.on('newSong', song => {
   rpc.setActivity({
-    details: `🎵  ${song.name}`,
-    state: `👤  ${song.artist}`,
+    details: `  ${song.name}`,
+    state: `  ${song.artist}`,
     startTimestamp: song.start,
     endTimestamp: song.end,
     largeImageKey,
     smallImageKey,
     largeImageText: `⛓  ${song.uri}`,
-    smallImageText: `💿  ${song.album}`,
+    smallImageText: `  ${song.album}`,
     instance: false,
   });
 
@@ -129,14 +129,14 @@ songEmitter.on('songUpdate', song => {
     undefined;
 
   rpc.setActivity({
-    details: `🎵  ${song.name}`,
-    state: `👤  ${song.artist}`,
+    details: `  ${song.name}`,
+    state: `  ${song.artist}`,
     startTimestamp,
     endTimestamp,
     largeImageKey,
     smallImageKey: startTimestamp ? smallImageKey : smallImagePausedKey,
     largeImageText: `⛓  ${song.uri}`,
-    smallImageText: `💿  ${song.album}`,
+    smallImageText: `  ${song.album}`,
     instance: false,
   });
 
